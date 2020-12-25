@@ -49,6 +49,7 @@ function addNote() {
     inputElement.value = "";
   }
 
+// Console message for user
 console.log(
   "Hi there!" +
   "\nThanks for using the teDoen app. \nI hope it helps you."
