@@ -21,12 +21,16 @@ function addNote() {
     let newPara = document.createElement("p");
       // collect user input to store in newly created element
       getInput(newPara);
+      // checks if input is empty and displays a console alert if true
+      // still need to find a way to make it an alert which aborts the function
+      checkInput(newPara)
       // add note-el class for note style
       addClass(newPara);
       // returns attached element to parent in the DOM and become visible
       clearInput();
         return  appendElement(newPara);
   }
+
 
   function getInput(paraElement) {
     // collect user input to store in function argument (p element)
@@ -41,7 +45,7 @@ function addNote() {
   }
 
   function addClass (element) {
-    element.classList.add("note-el", "mt-10");
+    element.classList.add("note-el", "mt-10", "center-el");
     }
 
   function clearInput() {
@@ -49,9 +53,16 @@ function addNote() {
     inputElement.value = "";
   }
 
+  function checkInput(inputElement) {
+    if (inputElement.innerHTML == "") {
+      console.log("No input detected");
+  } else {
+    return inputElement;
+  }
+}
+
+
 // Console message for user
 console.log(
-  "Hi there!" +
-  "\nThanks for using the teDoen app. \nI hope it helps you."
-  + "\ncreated by A. van der Veen from avdveen.nl"
+  "Hi there!"
 );
